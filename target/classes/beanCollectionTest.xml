@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <bean id="collection" class="org.jb.part006.CollectionTest">
+        <property name="testList">
+            <list value-type="int">
+                <value>1</value>
+                <value>2</value>
+                <value>2</value>
+                <value>2</value>
+                <value>2</value>
+            </list>
+        </property>
+        <property name="testSet">
+            <set>
+                <value>SetElement_0</value>
+                <value>SetElement_1</value>
+                <value>"SetElement_2"</value>
+                <value>"SetElement_3"</value>
+                <value>"SetElement_4"</value>
+                <value>"SetElement_2"</value>
+            </set>
+        </property>
+        <property name="testMap">
+            <map>
+                <entry key="1" value="One"/>
+                <entry key="2" value="Two"/>
+                <entry key="3" value="Three"/>
+            </map>
+        </property>
+        <property name="testProp">
+            <props>
+                <prop key="1">"One"</prop>
+                <prop key="2">"Two"</prop>
+                <prop key="3">"Three"</prop>
+                <prop key="4">"Four"</prop>
+            </props>
+        </property>
+    </bean>
+</beans>

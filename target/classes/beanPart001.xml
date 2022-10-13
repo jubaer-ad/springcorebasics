@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <!-- Part - 1 - Start (Related Classes: Student, Exam -->
+    <!-- bean definitions here -->
+    <bean id="s1" class="org.jb.part001.Student">
+        <property name="name" value="Jubaer"/>
+        <property name="id" value="0xA"/>
+    </bean>
+    <bean id="s2" class="org.jb.part001.Student">
+        <constructor-arg name="name" value="ANM" type="java.lang.String"/>
+        <constructor-arg name="id" value="0xB"/>
+    </bean>
+    <bean id="s3" class="org.jb.part001.Student">
+        <constructor-arg name="id" value="0xC" type="int"/>
+    </bean>
+    <bean id="s4" class="org.jb.part001.Student">
+        <property name="name" value="HaZoBaraallla"/>
+    </bean>
+
+    <!--
+    property tag is used when using setters
+    constructor-arg is used when using constructor
+    -->
+    <!-- Part - 1 - End (Related Classes: Student, Exam -->
+</beans>

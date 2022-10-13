@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <!-- Part - 3 - Start (Related Classes: Part3Driver, Offspring, Boy, Girl, Child, Father, Mother, Parent -->
+    <bean id="mother001" class="org.jb.part003.Mother">
+        <property name="name" value="Mother001"/>
+    </bean>
+    <bean id="father001" class="org.jb.part003.Father">
+        <property name="name" value="Father001"/>
+    </bean>
+
+    <bean id="boy001" class="org.jb.part003.Boy">
+        <property name="name" value="John"/>
+        <property name="mother" ref="mother001"/>
+        <property name="father" ref="father001"/>
+    </bean>
+
+    <bean id="girl001" class="org.jb.part003.Girl">
+        <property name="name" value="Jane"/>
+        <property name="mother" ref="mother001"/>
+        <property name="father" ref="father001"/>
+    </bean>
+
+    <bean id="child" class="org.jb.part003.Girl">
+        <property name="name" value="Kobi"/>
+        <property name="mother" ref="mother001"/>
+        <property name="father" ref="father001"/>
+    </bean>
+
+    <bean id="offspring" class="org.jb.part003.Offspring">
+        <property name="child" ref="girl001"/>
+    </bean>
+    <!-- Part - 3 - End (Related Classes: Part3Driver, Offspring, Boy, Girl, Child, Father, Mother, Parent -->
+</beans>

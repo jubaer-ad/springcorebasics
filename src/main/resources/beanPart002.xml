@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <!-- Part - 2 - Start (Related Classes: Main, Human, Address -->
+    <!--
+    Setting literal and object injection using setters (nested bean)
+    -->
+    <bean id="hum001" class="org.jb.part002.Human">
+        <property name="name" value="Jb"/>
+        <property name="dob" value="507"/>
+        <property name="ethnicity" value="bd"/>
+        <property name="address">
+            <bean class="org.jb.part002.Address">
+                <property name="holding" value="34/io"/>
+                <property name="road" value="97/yt"/>
+                <property name="zilla" value="Utopia"/>
+            </bean>
+        </property>
+
+    </bean>
+
+    <!--
+    Setting literal and object injection using setters (ref)
+    -->
+
+    <bean id="testHum002" class="org.jb.part002.Human">
+        <property name="name" value="testName002"/>
+        <property name="dob" value="testDob002"/>
+        <property name="ethnicity" value="testEthnicity002"/>
+        <property name="address" ref="testAddress002"/>
+    </bean>
+    <bean id="testAddress002" class="org.jb.part002.Address">
+        <property name="holding" value="testHolding002"/>
+        <property name="road" value="testRoad002"/>
+        <property name="zilla" value="TestZilla002"/>
+    </bean>
+
+    <!--
+    Setting literal and object injection using constructor (ref)
+    -->
+    <bean id="testAddress003" class="org.jb.part002.Address">
+        <constructor-arg name="holding" value="testHolding003"/>
+        <constructor-arg name="road" value="testRoad003"/>
+        <constructor-arg name="zilla" value="TestZilla003"/>
+    </bean>
+
+    <bean id="testHum003" class="org.jb.part002.Human">
+        <constructor-arg name="name" value="testName003"/>
+        <constructor-arg name="dob" value="testDob003"/>
+        <constructor-arg name="ethnicity" value="testEthnicity003"/>
+        <constructor-arg name="address" ref="testAddress003"/>
+    </bean>
+
+    <!--
+    Setting literal and object injection using constructor (nested bean)
+    -->
+    <bean id="testHum004" class="org.jb.part002.Human">
+        <constructor-arg name="name" value="testName004"/>
+        <constructor-arg name="dob" value="testDob004"/>
+        <constructor-arg name="ethnicity" value="testEthnicity004"/>
+        <constructor-arg name="address">
+            <bean class="org.jb.part002.Address">
+                <constructor-arg name="holding" value="testHolding004"/>
+                <constructor-arg name="road" value="testRoad004"/>
+                <constructor-arg name="zilla" value="TestZilla004"/>
+            </bean>
+        </constructor-arg>
+    </bean>
+
+
+    <!-- Part - 2 - End (Related Classes: Main, Human, Address -->
+</beans>

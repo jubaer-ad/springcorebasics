@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <!-- Part - 4 - Start (Related Classes: Part4Driver, Service, Sim, DataService, VoiceCallService, MessageService -->
+
+    <bean id="dService" class="org.jb.part004.DataService"/>
+    <bean id="vcService" class="org.jb.part004.VoiceCallService"/>
+    <bean id="mService" class="org.jb.part004.MessageService"/>
+
+    <bean id="sim001" class="org.jb.part004.Sim">
+        <property name="service" ref="mService"/>
+    </bean>
+    <!-- Part - 4 - Start (Related Classes: Part4Driver, Service, Sim, DataService, VoiceCallService, MessageService -->
+</beans>
